@@ -39,7 +39,9 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="text"
         android:id="@+id/get_user"
+        android:imeOptions="actionNext"
         android:layout_above="@+id/password"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/password"
@@ -51,6 +53,7 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/get_password"
+        android:imeOptions="actionDone"
         android:layout_alignBottom="@+id/password"
         android:layout_alignEnd="@+id/get_user"
         android:layout_toEndOf="@+id/password"
