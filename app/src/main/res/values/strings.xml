@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">SMC_MP</string>
     <string name="app_longname">Sistema de monitoreo calidad</string>
+    <string name="user">Usuario</string>
+    <string name="pass">Contraseña</string>
+    <string name="cancel">cancelar</string>
+    <string name="login">Iniciar sesión</string>
 </resources>

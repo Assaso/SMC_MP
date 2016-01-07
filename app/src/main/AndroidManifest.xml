@@ -19,6 +19,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".login"
+            android:label="Iniciar sesión">
+
+        </activity>
+
     </application>
 
 </manifest>
