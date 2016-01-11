@@ -1,4 +1,4 @@
-package com.example.jgallardo.smc_mp;
+package com.example.jgallardo.smc_mp.met_mec;
 
 public class met_mec_source {
 

@@ -1,12 +1,16 @@
-package com.example.jgallardo.smc_mp;
+package com.example.jgallardo.smc_mp.met_mec;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.example.jgallardo.smc_mp.R;
+import com.example.jgallardo.smc_mp.inspections.wleding_selection;
+import com.example.jgallardo.smc_mp.list_adapter;
 
 import java.util.ArrayList;
 
@@ -25,7 +29,7 @@ public class selection_met_mec extends AppCompatActivity {
         object.add(new met_mec_source("Pintura"));
 
         ListView met_mec_list = (ListView) findViewById(R.id.met_mec_list);
-        met_mec_list.setAdapter(new list_adapter(this, R.layout.list_objects, object) {
+        met_mec_list.setAdapter(new list_adapter(this, R.layout.list_text_only, object) {
 
             @Override
             protected void onEntrance(Object in, View view) {
@@ -44,7 +48,8 @@ public class selection_met_mec extends AppCompatActivity {
                 met_mec_source selected = (met_mec_source) parent.getItemAtPosition(position);
                 String text = selected.getAdd_item();
                 if (text.equals("Soldadura")) {
-                    Toast.makeText(getApplicationContext(), "seleccionado soldadura", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(selection_met_mec.this, wleding_selection.class);
+                    startActivity(intent);
                 }
             }
         });

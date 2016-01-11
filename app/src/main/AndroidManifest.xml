@@ -24,8 +24,13 @@
 
         </activity>
 
-        <activity android:name=".selection_met_mec"
+        <activity android:name=".met_mec.selection_met_mec"
             android:label="Área Metal-Mecanica">
+
+        </activity>
+
+        <activity android:name=".inspections.wleding_selection"
+            android:label="Soldadura">
 
         </activity>
 
