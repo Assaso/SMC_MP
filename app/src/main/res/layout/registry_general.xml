@@ -22,7 +22,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="20dp"
         android:text="OK"
-        android:textSize="50sp"/>
+        android:textSize="40sp"/>
 
     <Button
         android:layout_width="100dp"
@@ -32,7 +32,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="120dp"
         android:text="NC"
-        android:textSize="50sp"/>
+        android:textSize="40sp"/>
 
     <Button
         android:layout_width="180dp"
