@@ -1,5 +1,6 @@
 package com.example.jgallardo.smc_mp.inspections;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,10 +12,13 @@ import android.widget.Toast;
 
 import com.example.jgallardo.smc_mp.R;
 import com.example.jgallardo.smc_mp.list_adapter;
+import com.example.jgallardo.smc_mp.registrys.registry_general;
 
 import java.util.ArrayList;
 
 public class wleding_selection extends AppCompatActivity{
+
+    public final static String ELEGIDO = "elegido";
 
     @Override
     protected void onCreate(Bundle saveInstancesStatus){
@@ -33,7 +37,7 @@ public class wleding_selection extends AppCompatActivity{
 
             @Override
             protected void onEntrance(Object in, View view) {
-                if (in != null){
+                if (in != null) {
                     TextView inspecction = (TextView) view.findViewById(R.id.inspecction);
                     if (inspecction != null)
                         inspecction.setText(((inspections_source) in).getAdd_item());
@@ -49,11 +53,13 @@ public class wleding_selection extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> pariente, View view, int posicion, long id){
                 inspections_source elegido = (inspections_source) pariente.getItemAtPosition(posicion);
-                CharSequence text = "Elegido:" + elegido.getAdd_item();
+                String text = elegido.getAdd_item();
                 Toast toast = Toast.makeText(wleding_selection.this, text, Toast.LENGTH_LONG);
                 toast.show();
+                Intent intent = new Intent(wleding_selection.this, registry_general.class);
+                intent.putExtra("elegido", text);
+                startActivity(intent);
             }
        });
-
     }
 }

@@ -33,6 +33,10 @@
             android:label="Soldadura">
 
         </activity>
+        
+        <activity android:name=".registrys.registry_general">
+
+        </activity>
 
     </application>
 
