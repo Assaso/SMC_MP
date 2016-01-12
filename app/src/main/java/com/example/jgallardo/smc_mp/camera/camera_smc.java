@@ -17,16 +17,12 @@ public class camera_smc extends Activity {
 
     private Camera registry_camera = null;
     private CameraView registry_cameraview = null;
-    private LayoutInflater registry_button = null;
 
     @Override
     protected void onCreate(Bundle saveInstanceStatus){
         super.onCreate(saveInstanceStatus);
         setContentView(R.layout.camera_surface);
 
-        registry_button = LayoutInflater.from(this);
-        View overView = registry_button.inflate(R.layout.camera_buttons, null);
-        this.addContentView(overView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT));
 
         try{
             registry_camera = Camera.open();
