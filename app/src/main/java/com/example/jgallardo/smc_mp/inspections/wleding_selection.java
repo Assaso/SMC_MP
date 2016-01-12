@@ -57,7 +57,7 @@ public class wleding_selection extends AppCompatActivity{
                 Toast toast = Toast.makeText(wleding_selection.this, text, Toast.LENGTH_LONG);
                 toast.show();
                 Intent intent = new Intent(wleding_selection.this, registry_general.class);
-                intent.putExtra("elegido", text);
+                intent.putExtra("SELECTED", text);
                 startActivity(intent);
             }
        });
