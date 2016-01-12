@@ -1,10 +1,13 @@
 package com.example.jgallardo.smc_mp.camera;
 
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.view.SurfaceView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
@@ -14,11 +17,16 @@ public class camera_smc extends Activity {
 
     private Camera registry_camera = null;
     private CameraView registry_cameraview = null;
+    private LayoutInflater registry_button = null;
 
     @Override
     protected void onCreate(Bundle saveInstanceStatus){
         super.onCreate(saveInstanceStatus);
         setContentView(R.layout.camera_surface);
+
+        registry_button = LayoutInflater.from(this);
+        View overView = registry_button.inflate(R.layout.camera_buttons, null);
+        this.addContentView(overView, new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT));
 
         try{
             registry_camera = Camera.open();
