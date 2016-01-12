@@ -49,8 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/camera_logo"
-        android:textSize="25sp"/>
+        android:background="@drawable/camera_logo" />
 
     <TextView
         android:layout_width="wrap_content"

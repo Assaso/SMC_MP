@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.jgallardo.smc_mp.R;
+import com.example.jgallardo.smc_mp.camera.camera_smc;
 
 public class registry_general extends AppCompatActivity {
 
@@ -49,6 +50,14 @@ public class registry_general extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+
+        photo.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(registry_general.this, camera_smc.class);
+                startActivity(intent);
             }
         });
     }
