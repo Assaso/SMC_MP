@@ -23,10 +23,10 @@ public class selection_met_mec extends AppCompatActivity {
 
         ArrayList<met_mec_source> object = new ArrayList<>();
 
-        object.add(new met_mec_source("Habilitado"));
-        object.add(new met_mec_source("Armado"));
-        object.add(new met_mec_source("Soldadura"));
-        object.add(new met_mec_source("Pintura"));
+        object.add(new met_mec_source("Habilitado", R.color.darkRedMP));
+        object.add(new met_mec_source("Armado", R.color.darkRedMP));
+        object.add(new met_mec_source("Soldadura", R.color.darkRedMP));
+        object.add(new met_mec_source("Pintura", R.color.darkRedMP));
 
         ListView met_mec_list = (ListView) findViewById(R.id.met_mec_list);
         met_mec_list.setAdapter(new list_adapter(this, R.layout.list_text_only, object) {
@@ -37,6 +37,7 @@ public class selection_met_mec extends AppCompatActivity {
                     TextView area = (TextView) view.findViewById(R.id.area);
                     if (area != null) {
                         area.setText(((met_mec_source) in).getAdd_item());
+                        area.setBackgroundColor(((met_mec_source) in).getAdd_color());
                     }
                 }
             }

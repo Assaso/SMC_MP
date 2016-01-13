@@ -10,8 +10,7 @@
         android:text="inspecction"
         android:id="@+id/inspecction"
         android:textSize="60sp"
-        android:textAlignment="textStart"
-        android:background="@color/colorPrimary"/>
+        android:textAlignment="textStart" />
 
     <ImageView
         android:layout_width="70dp"

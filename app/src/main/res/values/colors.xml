@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4000</color>
+    <color name="redMP">#FF0000</color>
+    <color name="blueMP">#0000FF</color>
+    <color name="greenMP">#008000</color>
+    <color name="goldenMP">#FFD700</color>
+    <color name="blackMP">#000000</color>
+    <color name="darkRedMP">#8B0000</color>
 </resources>

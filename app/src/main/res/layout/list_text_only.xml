@@ -6,10 +6,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="area"
+        android:text=""
         android:textSize="60sp"
         android:textAlignment="center"
-        android:id="@+id/area"
-        android:background="@color/colorPrimaryDark"/>
+        android:id="@+id/area" />
 
 </RelativeLayout>
