@@ -46,6 +46,21 @@
 
         </activity>
 
+        <activity android:name=".start_screen"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity android:name=".otmp_selection"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity android:name=".registry_data"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

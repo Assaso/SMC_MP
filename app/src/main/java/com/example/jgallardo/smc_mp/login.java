@@ -8,7 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.jgallardo.smc_mp.met_mec.selection_met_mec;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class login extends AppCompatActivity{
 
@@ -30,14 +33,54 @@ public class login extends AppCompatActivity{
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(user.getText().toString().equals("qc003") && pass.getText().toString().equals("qc16")){
-                    Toast.makeText(getApplicationContext(), "Se ha iniciado sesión", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(login.this, selection_met_mec.class);
+                InputStream is = com.example.jgallardo.smc_mp.login.this.getResources().openRawResource(R.raw.users);
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+
+                String content;
+                int user_number = 0;
+                String line;
+                String parts[] = new String[0];
+                String user_pass1[], user_pass2[], user_pass3[];
+                try{
+                    while((line = br.readLine()) != null){
+                        content = line;
+                        parts = content.split(":");
+                    }
+                }catch (IOException e){
+                    e.printStackTrace();
+                }
+
+                try{
+                    is.close();
+                    br.close();
+                }catch (IOException ex){
+                    ex.printStackTrace();
+                }
+
+                user_pass1 = parts[0].split("\\-");
+                user_pass2 = parts[1].split("\\-");
+                user_pass3 = parts[2].split("\\-");
+
+                if (user.getText().toString().equals(user_pass1[0]) && pass.getText().toString().equals(user_pass1[1])){
+                    user_number = 1;
+                }else{
+                    if (user.getText().toString().equals(user_pass2[0]) && pass.getText().toString().equals(user_pass2[1])){
+                        user_number = 2;
+                    }else{
+                        if ( user.getText().toString().equals(user_pass3[0]) && pass.getText().toString().equals(user_pass3[1])){
+                            user_number = 3;
+                        }else{
+                            Toast.makeText(getApplicationContext(), "Datos equibocados, favor de verificar", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+
+                if (user_number != 0) {
+                    Intent intent = new Intent(com.example.jgallardo.smc_mp.login.this, start_screen.class);
+                    intent.putExtra("NO", user_number);
                     startActivity(intent);
                 }
-                else{
-                    Toast.makeText(getApplicationContext(), "Datos equibocados, favor de verificar", Toast.LENGTH_LONG).show();
-                }
+
             }
         });
 

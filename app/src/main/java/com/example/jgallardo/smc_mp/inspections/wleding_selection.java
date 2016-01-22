@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class wleding_selection extends AppCompatActivity{
 
-    public final static String ELEGIDO = "elegido";
 
     @Override
     protected void onCreate(Bundle saveInstancesStatus){
