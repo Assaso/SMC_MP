@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:text=""
+        android:textAlignment="center"
+        android:id="@+id/title_grething"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Registros"
+        android:id="@+id/edit_registry"
+        android:layout_above="@+id/up_registry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Cargar registros"
+        android:id="@+id/up_registry"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:text="Equipos de medición"
+        android:id="@+id/measure_registry"
+        android:layout_below="@+id/up_registry"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+</RelativeLayout>
