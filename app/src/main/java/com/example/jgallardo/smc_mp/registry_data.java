@@ -14,41 +14,47 @@ import com.example.jgallardo.smc_mp.met_mec.selection_met_mec;
 import java.io.OutputStreamWriter;
 import java.util.Calendar;
 
-public class registry_data extends AppCompatActivity{
+public class registry_data extends AppCompatActivity {
 
     TextView otmp, area;
-    EditText description, date, quantity;
+    EditText description, date, quantity, res;
     Button today, create, cancel;
     int user;
     String project;
 
     @Override
-    protected void onCreate(Bundle saveInstanceState){
+    protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.registry_data);
 
         Intent extras = getIntent();
         Bundle b = extras.getExtras();
-        if(b != null){
+        if (b != null) {
             user = b.getInt("AREA");
-            project =  b.getString("OTMP");
+            project = b.getString("OTMP");
         }
 
-        otmp = (TextView)findViewById(R.id.otmp_show);
-        area = (TextView)findViewById(R.id.area_show);
-        description = (EditText)findViewById(R.id.description);
-        date = (EditText)findViewById(R.id.start_date);
-        quantity = (EditText)findViewById(R.id.quantity);
-        today = (Button)findViewById(R.id.set_today);
-        create = (Button)findViewById(R.id.create_data);
-        cancel = (Button)findViewById(R.id.cancel_data);
+        otmp = (TextView) findViewById(R.id.otmp_show);
+        area = (TextView) findViewById(R.id.area_show);
+        description = (EditText) findViewById(R.id.description);
+        date = (EditText) findViewById(R.id.start_date);
+        quantity = (EditText) findViewById(R.id.quantity);
+        today = (Button) findViewById(R.id.set_today);
+        create = (Button) findViewById(R.id.create_data);
+        cancel = (Button) findViewById(R.id.cancel_data);
+        res = (EditText) findViewById(R.id.res_asa);
 
         otmp.setText(project);
-        if(user == 1){
+        if (user == 2) {
             area.setText("METAL - MECANICA");
-        }else{
+            res.setVisibility(View.GONE);
+        } else if (user == 3) {
             area.setText("ENSAMBLE");
+            res.setVisibility(View.VISIBLE);
+        } else {
+            area.setText("JEFE DE CALIDAD");
         }
+
 
         today.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +75,10 @@ public class registry_data extends AppCompatActivity{
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (user == 1) {
+                if (user == 2) {
                     try {
                         OutputStreamWriter osw = new OutputStreamWriter(openFileOutput(otmp.getText().toString() + ".txt", Context.MODE_PRIVATE));
-                        osw.write(otmp.getText().toString() + ":" + description.getText().toString() + "-" + date.getText().toString() + "-?-" + "" + user + "-" + quantity.getText().toString() + ":0:0#?-0#?#?:0#?#?:0#?-0#?-0#?-0#?#?:0#?-0#?-0#?#?");
+                        osw.write(otmp.getText().toString() + ":" + description.getText().toString() + "-" + date.getText().toString() + "-?-" + "" + user + "-" + quantity.getText().toString() + ":0:0:0#?%?$-0#?%?$#?$:0#?%?$#?$:0#?%?$-0#?%?$-0#?%?$-0#?%?$#?$:0#?%?$-0#?%?$-0#?%?$#?$:?-");
                         osw.close();
                     } catch (Exception e) {
                         e.printStackTrace();

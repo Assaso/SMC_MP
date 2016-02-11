@@ -86,4 +86,14 @@
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="20dp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:hint="Responsable"
+        android:textAlignment="center"
+        android:id="@+id/res_asa"
+        android:layout_below="@+id/quantity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 </RelativeLayout>

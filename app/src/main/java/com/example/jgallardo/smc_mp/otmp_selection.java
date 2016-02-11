@@ -35,32 +35,11 @@ public class otmp_selection extends AppCompatActivity{
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(otmp_project.getText().toString().equals("")){
+                if (otmp_project.getText().toString().equals("")) {
                     Toast toast = Toast.makeText(otmp_selection.this, "NO se ha declarado nombre de proyecto", Toast.LENGTH_SHORT);
                     toast.show();
-                }else{
-                    if(otmp_project.getText().toString().matches("OTMP-(([0-9]{2})?)-([0-9]{4})?$") || otmp_project.getText().toString().matches("OSMP-(([0-9]{2})?)-([0-9]{4})?$")){
-                        project_serial = otmp_project.getText().toString();
-                    }else{
-                        if(otmp_project.getText().toString().matches("Stock") || otmp_project.getText().toString().matches("stock")){
-                            identifier = "stock";
-                            project_serial = set_name_stock();
-                            project_serial = identifier + project_serial;
-                        }else{
-                            if (otmp_project.getText().toString().matches("Especial") || otmp_project.getText().toString().matches("especial")){
-                                identifier = "especial";
-                                project_serial = set_name_special();
-                                project_serial = identifier + project_serial;
-                            }else{
-                                Toast toast = Toast.makeText(otmp_selection.this, "El proyecto introducido no coincide con un formato valido, favor de verificar", Toast.LENGTH_SHORT);
-                                toast.show();
-                            }
-                        }
-                    }
-                }
-
-                if(project_serial.equals("")){
-                }else{
+                } else {
+                    project_serial = otmp_project.getText().toString();
                     Intent intent = new Intent(otmp_selection.this, registry_data.class);
                     intent.putExtra("AREA", to_registry);
                     intent.putExtra("OTMP", project_serial);
@@ -68,53 +47,5 @@ public class otmp_selection extends AppCompatActivity{
                 }
             }
         });
-    }
-
-    public String set_name_stock(){
-        String content;
-        String total_files[];
-        String temp_name;
-        int count = 0;
-
-        total_files = fileList();
-
-        for(int i = 0; i <= total_files.length; i++){
-            temp_name = total_files[i].substring(0,1);
-            if(temp_name.equals("s")){
-                count = count + 1;
-            }
-        }
-
-        if(count <= 9){
-            content = "0"+count;
-        }else{
-            content = ""+count;
-        }
-
-        return content;
-    }
-
-    public String set_name_special(){
-        String content;
-        String total_files[];
-        String temp_name;
-        int count = 0;
-
-        total_files = fileList();
-
-        for(int i = 0; i <= total_files.length; i++){
-            temp_name = total_files[i].substring(0,1);
-            if(temp_name.equals("e")){
-                count = count + 1;
-            }
-        }
-
-        if(count <= 9){
-            content = "0"+count;
-        }else{
-            content = ""+count;
-        }
-
-        return content;
     }
 }
